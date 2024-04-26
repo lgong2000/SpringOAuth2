@@ -19,7 +19,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests( auth ->auth
                     .antMatchers("/").permitAll()
                     .anyRequest().authenticated()
-                ).formLogin(withDefaults())
+                )
+                .oauth2Login(withDefaults())
+                .formLogin(withDefaults())
                 .build();
     }
 }
